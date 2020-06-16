@@ -1,0 +1,24 @@
+name: UnionBan-Client
+version: "1.0"
+api-version: "1.15"
+main: cn.cnklp.studio.UnionBanClientSpigot.ClientPlugin
+commands:
+  unionban:
+    description: UnionBan-Client
+    usage: |
+      /unionban help - Show this help.
+      /unionban status - Show status of UnionBan plugin and server.
+      /unionban login <username> <password> - Login to UnionBan server.
+      /unionban logout - Logout from UnionBan server.
+      /unionban ban <player> - Add <player> to UnionBan server(requires login).
+      /unionban pardon <player> - Remove <player> from UnionBan server(requires login).
+permissions:
+  unionban.info:
+    description: Allow user to get help and status of UnionBan plugin and server.
+    default: true
+  unionban.account:
+    description: Allow user to login or logout.
+    default: op
+  unionban.ban:
+    description: Allow user to add or remove player from UnionBan list.
+    default: op
