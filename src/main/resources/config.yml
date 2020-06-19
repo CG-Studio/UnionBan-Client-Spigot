@@ -1,4 +1,7 @@
-# Do NOT change this file manually!
+# UnionBan server address
+ServerAddress: "https://api.unionban.icu"
+# Login information.
+# Do NOT change these manually!
 username: ""
 password: ""
 api_key: ""

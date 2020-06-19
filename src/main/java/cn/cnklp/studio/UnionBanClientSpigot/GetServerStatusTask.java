@@ -58,6 +58,7 @@ public class GetServerStatusTask extends BukkitRunnable {
     @Override
     public void run() {
         sender.sendMessage("Querying server status...");
+        sender.sendMessage("The UnionBan Server address is " + plugin.ServerAddress);
         try {
             String version = GetVersion(plugin.ServerAddress);
             sender.sendMessage("UnionBan Server is ON! Version: " + version);

@@ -23,6 +23,8 @@ public class ClientPlugin extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("unionban")).setExecutor(executor);
         Objects.requireNonNull(this.getCommand("unionban")).setTabCompleter(executor);
         saveDefaultConfig();
+        ServerAddress = getConfig().getString("ServerAddress");
+        getLogger().info("UnionBan Server address: " + ServerAddress);
         new LoginTask(this, Bukkit.getConsoleSender()).runTaskAsynchronously(this);
     }
 
