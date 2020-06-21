@@ -1,9 +1,8 @@
 package cn.cnklp.studio.UnionBanClientSpigot;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import java.util.Objects;
 
 public class KickPlayerTask extends BukkitRunnable {
     private final String username;
@@ -15,6 +14,11 @@ public class KickPlayerTask extends BukkitRunnable {
     }
 
     public void run() {
-        Objects.requireNonNull(Bukkit.getPlayer(username)).kickPlayer("You are in the UnionBan list!");
+        Player player = Bukkit.getPlayer(username);
+        if (player == null) {
+            plugin.getLogger().info("Player " + username + " is not in the server.");
+        } else {
+            player.kickPlayer("You are in the UnionBan list!");
+        }
     }
 }
